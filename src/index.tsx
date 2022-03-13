@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import { App } from './App';
 import { mergeStyles } from '@fluentui/react';
 import reportWebVitals from './reportWebVitals';
+import "./index.css"
+import { BrowserRouter } from 'react-router-dom';
+import { initializeIcons } from '@fluentui/font-icons-mdl2';
 
 // Inject some global styles
 mergeStyles({
@@ -12,8 +15,8 @@ mergeStyles({
     height: '100vh',
   },
 });
-
-ReactDOM.render(<App />, document.getElementById('root'));
+initializeIcons()
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
