@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const navStyles: Partial<INavStyles> = {
     root: {
         boxSizing: 'border-box',
-        border: '1px solid #eee',
+        border: 'none',
         overflowY: 'auto',
     },
 };
@@ -16,42 +16,89 @@ const navLinkGroups: INavLinkGroup[] = [
     {
         links: [
             {
-                name: 'Home',
+                name: 'Dasboard',
                 url: '/',
-                icon: 'Home',
-                key:"key1"
+                icon: 'CircleRing',
+                key: "key1"
             },
             {
-                name: 'Sample List',
+                name: 'Calendar',
                 url: '/expenses',
-                icon: 'Calendar',
-                key:"key2"
+                icon: 'CircleRing',
+                key: "key2"
             },
-            // {
-            //     name: 'Client',
-            //     url: '/expenses',
-            //     icon: 'UserFollowed',
-            //     key:"key3"
-            // },
-            // {
-            //     name: 'Engagement',
-            //     url: '/expenses',
-            //     icon: 'ReminderTime',
-            //     key:"key4"
-            // },
-            // {
-            //     name: 'Reporting',
-            //     url: '/login',
-            //     icon: 'ReportDocument',
-            //     key:"key5"
-            // },
+            {
+                name: 'Client',
+                url: '/',
+                icon: 'CircleRing',
+                key: "key3"
+            },
+            {
+                name: 'Engagement',
+                url: '/',
+                icon: 'CircleRing',
+                key: "key4"
+            },
+            {
+                name: 'Reporting',
+                url: '/',
+                icon: 'CircleRing',
+                key: "key5"
+            },
+            {
+                name: 'Reference',
+                url: '#',
+                links: [
+                    {
+                        name: 'Write Up',
+                        url: '#',
+                        key: 'key6',
+                    },
+                    {
+                        name: 'Checklist',
+                        url: '#',
+                        key: 'key7',
+                    },
+                ],
+            },
+            {
+                name: 'Administration',
+                url: '#',
+                links: [
+                    {
+                        name: 'User Management',
+                        url: '#',
+                        key: 'key8',
+                    },
+                    {
+                        name: 'Role Management',
+                        url: '#',
+                        key: 'key9',
+                    },
+                    {
+                        name: 'Tagging',
+                        url: '#',
+                        key: 'key10',
+                    },
+                    {
+                        name: 'Configurations',
+                        url: '#',
+                        key: 'key11',
+                    },
+                    {
+                        name: 'System Logs',
+                        url: '#',
+                        key: 'key12',
+                    }
+                ],
+            }
         ],
     },
 ];
 
 const Sidebar = () => {
     const navigate = useNavigate();
-    const [selectedMenu,setSelectedMenu] = useState<string>("key1");
+    const [selectedMenu, setSelectedMenu] = useState<string>("key1");
 
     const _onLinkClick = (ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
         ev?.preventDefault();

@@ -14,6 +14,9 @@ const MainApp: React.FC = () => {
           <Outlet />
         </section>
       </div>
+      <div className="app-footer">
+        &nbsp;
+      </div>
     </div>
   )
 }

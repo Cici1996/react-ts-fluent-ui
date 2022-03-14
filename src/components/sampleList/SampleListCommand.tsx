@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CommandBar, ICommandBarItemProps } from '@fluentui/react/lib/CommandBar';
+import { CommandBar, ICommandBarItemProps, ICommandBarStyles } from '@fluentui/react/lib/CommandBar';
 import { IButtonProps } from '@fluentui/react/lib/Button';
 
 const overflowProps: IButtonProps = { ariaLabel: 'More commands' };
@@ -8,38 +8,51 @@ interface Props {
     onClickNew(): void
 }
 
+const styles: Partial<ICommandBarStyles> = {
+    root: {
+        paddingLeft: 0
+    },
+};
+
 const SampleListCommand: React.FC<Props> = ({ onClickNew }) => {
     const _items: ICommandBarItemProps[] = [
         {
             key: 'newItem',
             text: 'New',
             cacheKey: 'myCacheKey', // changing this key will invalidate this item's cache
-            iconProps: { iconName: 'Add' },
+            iconProps: { iconName: 'CircleRing' },
             onClick: () => onClickNew(),
         },
         {
-            key: 'editItem',
-            text: 'Edit',
-            iconProps: { iconName: 'PageEdit' },
+            key: 'Restore',
+            text: 'Restore',
+            iconProps: { iconName: 'CircleRing' },
             onClick: () => console.log('Edit'),
-        },
-        {
-            key: 'deleteItem',
-            text: 'Delete',
-            iconProps: { iconName: 'Delete' },
-            onClick: () => console.log('Delete'),
         },
         {
             key: 'archiveItem',
             text: 'Archive',
-            iconProps: { iconName: 'Archive' },
+            iconProps: { iconName: 'CircleRing' },
             onClick: () => console.log('Archive'),
+        },
+        {
+            key: 'Refresh',
+            text: 'Refresh',
+            iconProps: { iconName: 'CircleRing' },
+            onClick: () => console.log('Refresh'),
         }
     ];
+
+    const overflowItems: ICommandBarItemProps[] = [
+        { key: 'Refresh', text: 'Refresh', onClick: () => console.log('Refresh'), iconProps: { iconName: 'CircleRing' } }
+    ];
+
     return (
         <CommandBar
+            styles={styles}
             items={_items}
             overflowButtonProps={overflowProps}
+            overflowItems={overflowItems}
             ariaLabel="Inbox actions"
             primaryGroupAriaLabel="Email actions"
             farItemsGroupAriaLabel="More actions"

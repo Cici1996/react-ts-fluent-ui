@@ -18,12 +18,20 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
+  position: relative;
 }
-.app-body{
+.app-body {
   margin-top: 48px;
 }
 .app-content {
   flex: 1 1 auto;
+}
+.app-footer {
+  height: 48px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #f3f2f1;
 }
 @media (min-width: 768px) {
   .app-sidebar-1 {

@@ -27,7 +27,7 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <div className="title ms-fontSize-20 ms-fontWeight-semibold">Engagement</div>
+            <div className="title-module">Engagement</div>
             <Pivot className='pivot-engagement'>
                 <PivotItem style={{ marginTop: "30px", marginBottom: "30px" }} headerText="Ongoing">
                     <SampleListCommand onClickNew={onClickFromParent} />

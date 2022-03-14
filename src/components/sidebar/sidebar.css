@@ -1,4 +1,5 @@
 .app-sidebar {
-    background: #f3f2f1;
-    flex: 1;
+    background: #ffffff;
+    width: 229px;
+    border-right: 1px solid #eee;
   }
