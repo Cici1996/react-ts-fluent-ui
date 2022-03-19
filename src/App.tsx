@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { Sidebar, Topbar } from './components';
 import { Outlet, Route, Routes } from 'react-router-dom';
-import { Home } from './pages';
+import { Engagement, EngagementForm } from './pages';
+import { UseTranslationHook } from './utils/UseTranslation';
 
 const MainApp: React.FC = () => {
   return (
@@ -22,12 +23,14 @@ const MainApp: React.FC = () => {
 }
 
 export const App: React.FC = () => {
+  UseTranslationHook()
   return (
     <Routes>
       <Route path="/" element={<MainApp />}>
-        <Route path="/expenses" element={<Home />} />
+        <Route path="/engagement" element={<Engagement />} />
+        <Route path="/engagement/new" element={<EngagementForm />} />
       </Route>
-      <Route path="/login" element={<Home />}></Route>
+      <Route path="/login" element={<div>Login Page</div>}></Route>
     </Routes>
   );
 };

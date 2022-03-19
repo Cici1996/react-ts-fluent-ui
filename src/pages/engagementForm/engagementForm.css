@@ -1,0 +1,36 @@
+.engagement-label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #201f1e;
+}
+
+.gap-row {
+  margin-bottom: 14px;
+}
+
+.team-member {
+  margin-top: 19px;
+}
+
+.team-member-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 34px;
+  display: flex;
+  align-items: flex-end;
+
+  color: #000000;
+}
+
+.team-member-subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: flex-end;
+  color: #000000;
+}

@@ -6,6 +6,7 @@ const overflowProps: IButtonProps = { ariaLabel: 'More commands' };
 
 interface Props {
     onClickNew(): void
+    onClickRestore(): void
 }
 
 const styles: Partial<ICommandBarStyles> = {
@@ -14,7 +15,7 @@ const styles: Partial<ICommandBarStyles> = {
     },
 };
 
-const SampleListCommand: React.FC<Props> = ({ onClickNew }) => {
+const SampleListCommand: React.FC<Props> = ({ onClickNew,onClickRestore }) => {
     const _items: ICommandBarItemProps[] = [
         {
             key: 'newItem',
@@ -27,7 +28,7 @@ const SampleListCommand: React.FC<Props> = ({ onClickNew }) => {
             key: 'Restore',
             text: 'Restore',
             iconProps: { iconName: 'CircleRing' },
-            onClick: () => console.log('Edit'),
+            onClick: () => onClickRestore(),
         },
         {
             key: 'archiveItem',
@@ -53,8 +54,6 @@ const SampleListCommand: React.FC<Props> = ({ onClickNew }) => {
             items={_items}
             overflowButtonProps={overflowProps}
             overflowItems={overflowItems}
-            ariaLabel="Inbox actions"
-            primaryGroupAriaLabel="Email actions"
             farItemsGroupAriaLabel="More actions"
         />
     );

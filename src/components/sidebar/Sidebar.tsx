@@ -23,7 +23,7 @@ const navLinkGroups: INavLinkGroup[] = [
             },
             {
                 name: 'Calendar',
-                url: '/expenses',
+                url: '/',
                 icon: 'CircleRing',
                 key: "key2"
             },
@@ -35,7 +35,7 @@ const navLinkGroups: INavLinkGroup[] = [
             },
             {
                 name: 'Engagement',
-                url: '/',
+                url: '/engagement',
                 icon: 'CircleRing',
                 key: "key4"
             },

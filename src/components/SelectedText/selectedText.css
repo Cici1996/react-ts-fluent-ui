@@ -1,0 +1,15 @@
+.team-member-selected {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0078d4;
+}
+
+.engagement-label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #201f1e;
+}
