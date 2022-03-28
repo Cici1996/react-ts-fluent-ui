@@ -126,7 +126,7 @@ interface Props {
   onActiveItemChanged? : (item?: IDocument, index?: number, ev?: React.FocusEvent<HTMLElement>) => void
 }
 
-const SampleList: React.FC<Props> = ({allItems,onActiveItemChanged}) => {
+export const SampleList: React.FC<Props> = ({allItems,onActiveItemChanged}) => {
   const dataItems:IDocument[] = (allItems == null) ? generateDocuments() : allItems;
 
   return (
@@ -141,5 +141,3 @@ const SampleList: React.FC<Props> = ({allItems,onActiveItemChanged}) => {
     />
   )
 }
-
-export default SampleList

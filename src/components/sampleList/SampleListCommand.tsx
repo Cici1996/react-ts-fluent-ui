@@ -15,7 +15,7 @@ const styles: Partial<ICommandBarStyles> = {
     },
 };
 
-const SampleListCommand: React.FC<Props> = ({ onClickNew,onClickRestore }) => {
+export const SampleListCommand: React.FC<Props> = ({ onClickNew,onClickRestore }) => {
     const _items: ICommandBarItemProps[] = [
         {
             key: 'newItem',
@@ -58,5 +58,3 @@ const SampleListCommand: React.FC<Props> = ({ onClickNew,onClickRestore }) => {
         />
     );
 };
-
-export default SampleListCommand;

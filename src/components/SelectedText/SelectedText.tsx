@@ -8,7 +8,7 @@ interface Props {
     totalPerson: number
 }
 
-const SelectedText: React.FC<Props> = ({ label, totalPerson }) => {
+export const SelectedText: React.FC<Props> = ({ label, totalPerson }) => {
     const { t } = useTranslation();
     return (
         <div className="ms-Grid-row gap-row">
@@ -21,5 +21,3 @@ const SelectedText: React.FC<Props> = ({ label, totalPerson }) => {
         </div>
     )
 }
-
-export default SelectedText

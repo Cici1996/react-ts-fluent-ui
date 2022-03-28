@@ -1,0 +1,47 @@
+.app-content {
+    /* padding: 20px; */
+  }
+  .app-content {
+    color: #777;
+  }
+  
+  /**
+   * Flex things:
+   * — Mobile first`
+   * — Responsive
+   */
+  .app {
+    min-height: 100vh;
+  }
+  .app,
+  .app-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    position: relative;
+  }
+  .app-body {
+    margin-top: 48px;
+  }
+  .app-content {
+    flex: 1 1 auto;
+  }
+  .app-footer {
+    height: 48px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #f3f2f1;
+  }
+  @media (min-width: 768px) {
+    .app-sidebar-1 {
+      order: -1;
+    }
+    .app-body {
+      flex-direction: row;
+    }
+    .hg-sidebar {
+      flex: 0 0 260px;
+    }
+  }
+  

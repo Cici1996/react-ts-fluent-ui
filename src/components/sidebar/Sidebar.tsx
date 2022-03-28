@@ -96,7 +96,7 @@ const navLinkGroups: INavLinkGroup[] = [
     },
 ];
 
-const Sidebar = () => {
+export const Sidebar = () => {
     const navigate = useNavigate();
     const [selectedMenu, setSelectedMenu] = useState<string>("key1");
 
@@ -118,5 +118,3 @@ const Sidebar = () => {
         </div>
     )
 }
-
-export default Sidebar;

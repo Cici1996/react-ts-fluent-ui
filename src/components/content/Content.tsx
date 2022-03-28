@@ -5,7 +5,7 @@ interface Props {
     children?: JSX.Element|JSX.Element[]
 }
 
-const Content: React.FC<Props> = ({ title, children }) => {
+export const Content: React.FC<Props> = ({ title, children }) => {
     return (
         <div style={{ paddingLeft: "10px",height:"100%" }}>
             <div className="title-module">{title}</div>
@@ -13,5 +13,3 @@ const Content: React.FC<Props> = ({ title, children }) => {
         </div>
     )
 }
-
-export default Content

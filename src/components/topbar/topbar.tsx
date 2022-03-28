@@ -1,8 +1,14 @@
 import React from 'react'
 import { Icon } from '@fluentui/react/lib/Icon';
 import "./topbar.css"
+import { userManager } from '../../utils';
 
-const Topbar: React.FC = () => {
+export const Topbar: React.FC = () => {
+
+    const logout = () => {
+        userManager.signoutRedirect()
+    }
+
     return (
         <div className='suiteNav'>
             <div className="leftRegion">
@@ -17,10 +23,10 @@ const Topbar: React.FC = () => {
                 <Icon iconName='Mail' style={{ fontSize: "16px", color: "white", padding: "14px", cursor: "pointer" }} />
                 <Icon iconName='Settings' style={{ fontSize: "16px", color: "white", padding: "14px", cursor: "pointer" }} />
                 <Icon iconName='StatusCircleQuestionMark' style={{ fontSize: "20px", color: "white", padding: "14px", cursor: "pointer" }} />
-                <img src='https://ui-avatars.com/api/?name=Akhmad+Zaki' alt='Profile' style={{ borderRadius: "50%", width: "28px", height: "28px", padding: "10px" }} />
+                <div style={{cursor:"pointer"}} onClick={logout}>
+                    <img src='https://ui-avatars.com/api/?name=Akhmad+Zaki' alt='Profile' style={{ borderRadius: "50%", width: "28px", height: "28px", padding: "10px" }} />
+                </div>
             </div>
         </div>
     )
 }
-
-export default Topbar;

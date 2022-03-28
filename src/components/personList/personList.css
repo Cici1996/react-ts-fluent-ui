@@ -1,0 +1,8 @@
+.person-list-main {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #e3e3e3;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
