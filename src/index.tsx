@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import "./index.css"
 import { BrowserRouter } from 'react-router-dom';
 import { initializeIcons } from '@fluentui/font-icons-mdl2';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 // Inject some global styles
 mergeStyles({
@@ -16,7 +18,10 @@ mergeStyles({
   },
 });
 initializeIcons()
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter><App /></BrowserRouter>
+  </Provider>, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

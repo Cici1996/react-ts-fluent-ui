@@ -1,11 +1,12 @@
 import React from 'react'
 import { Icon } from '@fluentui/react/lib/Icon';
 import "./topbar.css"
-import { userManager } from '../../utils';
+import { TOKEN, userManager } from '../../utils';
 
 export const Topbar: React.FC = () => {
 
     const logout = () => {
+        localStorage.removeItem(TOKEN)
         userManager.signoutRedirect()
     }
 

@@ -23,7 +23,7 @@ const navLinkGroups: INavLinkGroup[] = [
             },
             {
                 name: 'Calendar',
-                url: '/',
+                url: '/home',
                 icon: 'CircleRing',
                 key: "key2"
             },

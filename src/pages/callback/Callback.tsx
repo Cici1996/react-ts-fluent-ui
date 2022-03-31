@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react'
-import { userManager } from '../../utils';
+import { signinRedirectCallback } from '../../utils';
 
 const Callback: React.FC = () => {
     useEffect(() => {
-        userManager
-            .signinRedirectCallback()
-            .then(user => {
-                console.log(user)
-                window.location.href = "/"
-            })
-            .catch(error => console.log(error));
+        signinRedirectCallback().then(user => {
+            window.location.href = "/"
+        }).catch(error => console.log(error))
     }, []);
 
     return (
