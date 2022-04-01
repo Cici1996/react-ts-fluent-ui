@@ -3,7 +3,7 @@ import React, { lazy, Suspense, useEffect } from 'react'
 import { useAuth } from 'react-oidc-context'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Callback, Layout } from '../pages'
-import { signinRedirect, userManager } from '../utils'
+import { userManager } from '../utils'
 
 interface SuspanseFallBackProps {
     children: JSX.Element | JSX.Element[]
@@ -28,7 +28,8 @@ export const MainRouter: React.FC = () => {
     const navigate = useNavigate();
     useEffect(() => {
         userManager.getUser().then((user: User | null) => {
-            if (user == null) signinRedirect()
+            console.log(user)
+            if (user == null) navigate("/welcome")
         })
     }, [])
 

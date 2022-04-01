@@ -21,8 +21,8 @@ export const signinRedirectCallback = () => {
 }
 
 export const signoutRedirect = () => {
-  userManager.clearStaleState()
-  userManager.removeUser()
+  //userManager.clearStaleState()
+  //userManager.removeUser()
   return userManager.signoutRedirect()
 }
 

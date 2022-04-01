@@ -1,13 +1,12 @@
 import React from 'react'
 import { Icon } from '@fluentui/react/lib/Icon';
 import "./topbar.css"
-import { TOKEN, userManager } from '../../utils';
+import { signoutRedirect } from '../../utils';
 
 export const Topbar: React.FC = () => {
 
     const logout = () => {
-        localStorage.removeItem(TOKEN)
-        userManager.signoutRedirect()
+        signoutRedirect()
     }
 
     return (
@@ -24,7 +23,7 @@ export const Topbar: React.FC = () => {
                 <Icon iconName='Mail' style={{ fontSize: "16px", color: "white", padding: "14px", cursor: "pointer" }} />
                 <Icon iconName='Settings' style={{ fontSize: "16px", color: "white", padding: "14px", cursor: "pointer" }} />
                 <Icon iconName='StatusCircleQuestionMark' style={{ fontSize: "20px", color: "white", padding: "14px", cursor: "pointer" }} />
-                <div style={{cursor:"pointer"}} onClick={logout}>
+                <div style={{ cursor: "pointer" }} onClick={logout}>
                     <img src='https://ui-avatars.com/api/?name=Akhmad+Zaki' alt='Profile' style={{ borderRadius: "50%", width: "28px", height: "28px", padding: "10px" }} />
                 </div>
             </div>
