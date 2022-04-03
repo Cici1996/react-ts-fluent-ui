@@ -1,15 +1,25 @@
 import React, { useEffect } from 'react'
-import { signinRedirectCallback } from '../../utils';
+import { signinRedirectCallback, signoutRedirectCallback, userManager } from '../../utils';
 
-const Callback: React.FC = () => {
+interface Props {
+    isCallbackLogout: boolean
+}
+
+const Callback: React.FC<Props> = ({ isCallbackLogout }) => {
     useEffect(() => {
-        signinRedirectCallback().then(user => {
-            window.location.href = "/"
-        }).catch(error => console.log(error))
-    }, []);
+        if (isCallbackLogout) {
+            signoutRedirectCallback().then(user => {
+                userManager.signinRedirect()
+            }).catch(error => console.log(error))
+        } else {
+            signinRedirectCallback().then(user => {
+                window.location.href = "/"
+            }).catch(error => console.log(error))
+        }
+    }, [isCallbackLogout]);
 
     return (
-        <div>Authentification callback processing...</div>
+        <div>callback processing...</div>
     )
 }
 
